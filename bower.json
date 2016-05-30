@@ -1,7 +1,7 @@
 {
   "name": "stub",
   "description": "",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "web-components",
     "x-tag"
@@ -11,7 +11,6 @@
     "src/main.css"
   ],
   "dependencies": {
-    "x-tag-core": "*",
-    "flickity": "*"
+    "x-tag-core": "*"
   }
 }
