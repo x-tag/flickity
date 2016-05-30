@@ -7,10 +7,20 @@
 
 /* X-Tag Component */
 
+  var proto = Flickity.prototype;
+  var methods = {};
+
+  Object.keys(proto).forEach(function(z){
+    var method = proto[z];
+    if (typeof method == 'function') methods[z] = function(){
+      return method.apply(this.xtag.instance, arguments);
+    }
+  });
+
   xtag.register('x-flickity', {
     lifecycle: {
       created: function() {
-        this.instance = new Flickity(this, {
+        this.xtag.instance = new Flickity(this, {
           initialIndex: this.getAttribute('index') || 0,
           lazyLoad: this.hasAttribute('lazyload'),
           autoPlay: this.hasAttribute('autoplay'),
@@ -23,15 +33,7 @@
         });
       }
     },
-    events: {
-
-    },
-    accessors: {
-
-    },
-    methods: {
-
-    }
+    methods: methods
   });
 
   xtag.register('x-flickity-cell', {
