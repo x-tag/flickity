@@ -13,12 +13,26 @@
 
   <style>
 
+    html, body {
+      height: 100%;
+    }
+
+    x-flickity {
+      height: 30%;
+    }
+
   </style>
 </head>
 
 <body>
 
-	<h2>Create a Demo</h2>
+	<x-flickity lazyload paging-ui arrow-ui>
+    <x-flickity-cell src="images/0.jpg"></x-flickity-cell>
+    <x-flickity-cell src="images/1.jpg" lazyload></x-flickity-cell>
+    <x-flickity-cell src="images/2.jpg" lazyload></x-flickity-cell>
+    <x-flickity-cell src="images/3.jpg" lazyload></x-flickity-cell>
+    <x-flickity-cell src="images/4.jpg" lazyload></x-flickity-cell>
+  </x-flickity>
 
 </body>
 
